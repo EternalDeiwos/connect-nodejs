@@ -321,9 +321,10 @@ AnvilConnect.prototype.token = token
  * User Info
  */
 
-function userInfo () {
+function userInfo (tokens) {
+  this.tokens = tokens
   var uri = this.configuration.userinfo_endpoint
-  var token = this.tokens.access_token
+  var token = tokens.access_token
   var self = this
 
   return new Promise(function (resolve, reject) {
